@@ -1,0 +1,60 @@
+# WhatsApp Personal Assistant Chatbot
+
+A simple AI-powered WhatsApp personal assistant built with:
+- **Twilio** for WhatsApp API integration (easiest for beginners)
+- **Claude (Haiku 4.5)** as the AI brain
+- **Node.js** for the server
+
+## Setup Instructions
+
+### 1. Prerequisites
+- Node.js installed (v18+)
+- Twilio account (free trial works)
+- Ngrok (for local testing)
+
+### 2. Initialize the project
+```bash
+mkdir whatsapp-chatbot
+cd whatsapp-chatbot
+npm init -y
+npm install twilio express dotenv
+```
+
+### 3. Environment setup
+Create a `.env` file:
+```
+TWILIO_ACCOUNT_SID=your_twilio_account_sid
+TWILIO_AUTH_TOKEN=your_twilio_auth_token
+TWILIO_WHATSAPP_NUMBER=whatsapp:+14155238886  # Twilio sandbox number
+CLANE_API_KEY=your_claude_api_key  # From Anthropic dashboard
+PORT=3000
+```
+
+### 4. Run the bot
+```bash
+node index.js
+```
+
+Then expose it with ngrok:
+```bash
+ngrok http 3000
+```
+
+Update your Twilio WhatsApp webhook to use the ngrok URL.
+
+---
+
+## Bot Features
+- 🤖 AI-powered responses using Claude Haiku 4.5
+- 💾 Simple memory system for conversation context
+- 📱 WhatsApp via Twilio API
+- 🔄 Handles new conversations and context
+
+---
+
+## Files
+- `index.js` - Main server and webhook handler
+- `.env` - Environment variables (you create this)
+- `memory.json` - Conversation memory (auto-created)
+
+Let me know if you want me to create any of these files or need help with specific parts!
